@@ -1,0 +1,70 @@
+# EXPO
+
+// npm install -g expo-cli -> instalação global do Expo Go
+// expo --version -> importante verificar a versão, pois tb indica se o Expo foi devidamente instalado
+// npx create-expo-app my-app -> alternativa: instala o EXPO via Node e já cria uma pasta com o ambiente
+
+// expo start -> faz o Metro Bunder do Expo Go criar uma build do projeto e abrir no celular!
+(útil com o uso de wifi?)
+
+// npm run android -> faz o Metro Bunder do Expo Go criar uma build do projeto e abrir no celular!
+(útil com o uso de cabo usb - precisa habilitar o modo desenvolvedor no celular e dar permissão ao dispositivo no PC!)
+
+// npx expo install expo-splash-screen -> instala o Splash Screen
+
+// npx expo install @expo-google-fonts/inter (ou qualquer outra fonte) -> Instala fontes no Expo
+
+// npx expo install expo-auth-session expo-random -> Instala o Auth Session para as autenticações!
+
+// npx expo install expo-web-browser -> Instala suporte a redirecionamentos com web browsers
+ // configurar no app.json um script de "scheme": "nome do projeto"
+
+# NATIVE BASE
+
+// npm install native-base
+// npm install --legacy-peer-deps native-base -> CASO DE ERRO
+
+// expo install react-native-svg@12.1.1 -> Permite o react-native ler svgs
+// expo install react-native-safe-area-context@3.3.2 -> Permite os elementos serem renderizados na área segura do display 
+    dos dipositivos mobile
+
+
+
+# REACT
+
+// no package.json, a gente faz uma propriedade nova chamada "override": {"react":"18.0.0"}
+    para forçar o uso desse versionamento do React;
+
+
+#REACT NATIVE
+
+// Lib: npm i react-native-svg-transformer -> Uma lib que permite usar SVGS como componentes;
+    Precisa configurar um arquivo na raíz chamado de "metro.config.js", e copiar as configs do site da lib
+    e TEM que ser o que está na sessão "Expo SDK".
+// SE Usar Typescript: criar uma pasta com @types, e nele um arquivo "svg.d.ts".
+// No site dessa lib tem as configs para esse arquivo, ele basicamente cria uma tipagem para arquivos .svg;
+
+// Lembrete; ao criarmos uma tipagem, e declarar ela como um dos argumentos dos componentes:
+ // Elas ficam como declarativas nas funções, e mesmo com a extends props nativas dos atributos do HTML, 
+ // outras atribuições implícitas não serão reconhecidas. POR ISSO:
+ // ({x, ...rest}:Props) => <Component {...rest}></Component> => permite colocar atribuições implícitas fora da
+ // tipagem; Isso também torna o componente mais flexível;
+
+ // npm install --save react-native-country-flag -> Instala componentes de bandeiras de países;
+
+ // npm i country-list -> api de listas de países
+
+
+# PHOSPHOR REACT NATIVE
+
+// npm install --save phosphor-react-native -> Icones do phosphor react
+    NECESSITA do react-svg, JÁ INSTALADO
+
+
+#  REACT NATIVE - CONTEXTO
+
+// Nosso projeto terá telas/páginas/rotas que SÓ aparecem CASO o usuário estiver LOGADO;
+
+
+// padrão de hooks começarem com minúscula -> function useAuth()
+//para não chamarmos o useContext sempre criamos um hook que já facilita esse trabalho
